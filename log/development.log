@@ -6805,3 +6805,124 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/articles/1" for ::1 at 2017-01-23 15:10:06 +0100
+  
+SyntaxError (/Users/Thomas/Documents/DEV/MAMP/H3/ruby/ruby-documentation/app/controllers/articles_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+  before_action: fetch_article
+                ^):
+  
+app/controllers/articles_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.4ms)
+Started GET "/articles/1" for ::1 at 2017-01-23 15:10:56 +0100
+  
+SyntaxError (/Users/Thomas/Documents/DEV/MAMP/H3/ruby/ruby-documentation/app/controllers/articles_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+  before_action: fetch_article
+                ^):
+  
+app/controllers/articles_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.4ms)
+Started GET "/articles/1" for ::1 at 2017-01-23 15:11:07 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=1 [WHERE ("articles"."published_at" IS NOT NULL)]):
+  
+app/controllers/articles_controller.rb:14:in `fetch_article'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.8ms)
+Started GET "/articles/1" for ::1 at 2017-01-23 15:14:51 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=1 [WHERE ("articles"."published_at" IS NOT NULL)]):
+  
+app/controllers/articles_controller.rb:15:in `fetch_article'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.6ms)
+Started GET "/articles/1" for ::1 at 2017-01-23 15:14:52 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=1 [WHERE ("articles"."published_at" IS NOT NULL)]):
+  
+app/controllers/articles_controller.rb:15:in `fetch_article'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.4ms)
+Started GET "/" for ::1 at 2017-01-23 15:14:54 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.4ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (14.5ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (20.3ms)
+  Rendered chapters/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 60ms (Views: 53.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-23 15:16:05 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=1 [WHERE ("articles"."published_at" IS NOT NULL)]):
+  
+app/controllers/articles_controller.rb:15:in `fetch_article'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.5ms)
