@@ -48,12 +48,15 @@
 # rvm.articles.create({""})
 # rvm.articles.create({""})
 
-introduction = Chapter.create({title: "Introduction", published_at: Time.zone.now})
-rvm = introduction.children.create({title: "RVM : Ruby Version Manager", published_at: Time.zone.now})
+presentation = Chapter.create({title: "Présentation"})
 
-rvm.articles.create({title: "ruby version" content: "Créer le fichier .ruby-version avec le contenu suivant: \"ruby-2.3.1\". Ce fichier permet de décrire de quelle version nous avons besoin pour faire fonctionner le projet."})
-rvm.articles.create({title: "ruby gemset" content: "Créer le fichier .ruby-version avec le contenu suivant: \"mydoc\". Ce fichier permet de définir une sorte d'environnement virtuel pour chaque projet."})
-rvm.articles.create({title: "reload rvm" content: "Pour recharger l'environnement il faut faire un \"cd\" . ou relancer la console."})
+
+introduction = Chapter.create({title: "Introduction", published_at: Time.zone.now})
+rvm = introduction.children.create({title: "RVM", published_at: Time.zone.now})
+
+rvm.articles.create({content: "Créer le fichier .ruby-version avec le contenu suivant: `ruby-2.3.1`. Ce fichier permet de décrire de quelle version nous avons besoin pour faire fonctionner le projet."})
+rvm.articles.create({content: "Créer le fichier .ruby-version avec le contenu suivant: `mydoc. Ce fichier permet de définir une sorte d'environnement virtuel pour chaque projet."})
+rvm.articles.create({content: "Pour recharger l'environnement il faut faire un `cd` . ou relancer la console."})
 
 
 introduction.children.create({title: "Initialisation des dépendances", published_at: Time.zone.now})
