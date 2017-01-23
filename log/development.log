@@ -4946,3 +4946,1094 @@ Processing by ChaptersController#index as HTML
 Completed 200 OK in 384ms (Views: 356.9ms | ActiveRecord: 3.7ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20170109142639)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "chapter_id" integer, "lang" varchar, "published_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_chapter_id" ON "articles" ("chapter_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170109142639"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateChapters (20170116094340)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "published_at" datetime, "parent_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170116094340"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-23 13:39:24 UTC], ["updated_at", 2017-01-23 13:39:24 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-01-23 14:39:32 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 278ms (Views: 256.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:39:34 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:39:35 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:39:36 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:39:37 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:39:38 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20170109142639)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "chapter_id" integer, "lang" varchar, "published_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_chapter_id" ON "articles" ("chapter_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170109142639"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateChapters (20170116094340)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "published_at" datetime, "parent_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170116094340"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-23 13:39:52 UTC], ["updated_at", 2017-01-23 13:39:52 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-01-23 14:40:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 264ms (Views: 241.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:40:02 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:40:14 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chapters/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20170109142639)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "chapter_id" integer, "lang" varchar, "published_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_chapter_id" ON "articles" ("chapter_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170109142639"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateChapters (20170116094340)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "published_at" datetime, "parent_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170116094340"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-23 13:40:19 UTC], ["updated_at", 2017-01-23 13:40:19 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Grand chapitre 0"], ["published_at", 2017-01-23 13:40:21 UTC], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 0"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 1], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 0"], ["chapter_id", 2], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 1"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 1], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 0"], ["chapter_id", 3], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 2"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 1], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 0"], ["chapter_id", 4], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 3"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 1], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 0"], ["chapter_id", 5], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 4"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 1], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 0"], ["chapter_id", 6], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Grand chapitre 1"], ["published_at", 2017-01-23 13:40:21 UTC], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 0"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 7], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 1"], ["chapter_id", 8], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 1"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 7], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 1"], ["chapter_id", 9], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 2"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 7], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 1"], ["chapter_id", 10], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 3"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 7], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 1"], ["chapter_id", 11], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 4"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 7], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 1"], ["chapter_id", 12], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Grand chapitre 2"], ["published_at", 2017-01-23 13:40:21 UTC], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 0"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 13], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 2"], ["chapter_id", 14], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 1"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 13], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 2"], ["chapter_id", 15], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 2"], ["published_at", 2017-01-23 13:40:21 UTC], ["parent_id", 13], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:21 UTC], ["updated_at", 2017-01-23 13:40:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 2"], ["chapter_id", 16], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 3"], ["published_at", 2017-01-23 13:40:22 UTC], ["parent_id", 13], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 2"], ["chapter_id", 17], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sous-chapitre 4"], ["published_at", 2017-01-23 13:40:22 UTC], ["parent_id", 13], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 0 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 1 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 2 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 3 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 4 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 5 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 6 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 7 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 8 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Contenu de l'article 9 pour le chapitre 2"], ["chapter_id", 18], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Introduction"], ["published_at", 2017-01-23 13:40:22 UTC], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "RVM"], ["published_at", 2017-01-23 13:40:22 UTC], ["parent_id", 19], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Créer le fichier .ruby-version avec le contenu suivant: `ruby-2.3.1`. Ce fichier permet de décrire de quelle version nous avons besoin pour faire fonctionner le projet."], ["chapter_id", 20], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Créer le fichier .ruby-version avec le contenu suivant: `mydoc. Ce fichier permet de définir une sorte d'environnement virtuel pour chaque projet."], ["chapter_id", 20], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Pour recharger l'environnement il faut faire un `cd` . ou relancer la console."], ["chapter_id", 20], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Initialisation des dépendances"], ["published_at", 2017-01-23 13:40:22 UTC], ["parent_id", 19], ["created_at", 2017-01-23 13:40:22 UTC], ["updated_at", 2017-01-23 13:40:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTitleToArticles (20170123134056)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "title" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170123134056"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+Started GET "/" for ::1 at 2017-01-23 14:42:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 5]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 6]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [5 times] (32.4ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 7]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 8]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.3ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 9]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.3ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 10]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 11]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 12]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.3ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [5 times] (19.2ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 13]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 14]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 15]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 16]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.4ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 17]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 18]]
+  Rendered collection of articles/_article.html.erb [10 times] (0.2ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [5 times] (19.3ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 19]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 20]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.1ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 21]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (4.9ms)
+  Rendered collection of chapters/_chapter.html.erb [4 times] (106.6ms)
+  Rendered chapters/index.html.erb within layouts/application (116.0ms)
+Completed 200 OK in 384ms (Views: 357.4ms | ActiveRecord: 4.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20170109142639)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "chapter_id" integer, "lang" varchar, "published_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_chapter_id" ON "articles" ("chapter_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170109142639"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateChapters (20170116094340)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "published_at" datetime, "parent_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170116094340"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTitleToArticles (20170123134056)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "articles" ADD "title" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170123134056"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-23 13:43:16 UTC], ["updated_at", 2017-01-23 13:43:16 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Introduction"], ["published_at", 2017-01-23 13:43:18 UTC], ["created_at", 2017-01-23 13:43:18 UTC], ["updated_at", 2017-01-23 13:43:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "RVM"], ["published_at", 2017-01-23 13:43:18 UTC], ["parent_id", 1], ["created_at", 2017-01-23 13:43:18 UTC], ["updated_at", 2017-01-23 13:43:18 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Créer le fichier .ruby-version avec le contenu suivant: `ruby-2.3.1`. Ce fichier permet de décrire de quelle version nous avons besoin pour faire fonctionner le projet."], ["chapter_id", 2], ["created_at", 2017-01-23 13:43:18 UTC], ["updated_at", 2017-01-23 13:43:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Créer le fichier .ruby-version avec le contenu suivant: `mydoc. Ce fichier permet de définir une sorte d'environnement virtuel pour chaque projet."], ["chapter_id", 2], ["created_at", 2017-01-23 13:43:18 UTC], ["updated_at", 2017-01-23 13:43:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Pour recharger l'environnement il faut faire un `cd` . ou relancer la console."], ["chapter_id", 2], ["created_at", 2017-01-23 13:43:18 UTC], ["updated_at", 2017-01-23 13:43:18 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Initialisation des dépendances"], ["published_at", 2017-01-23 13:43:18 UTC], ["parent_id", 1], ["created_at", 2017-01-23 13:43:18 UTC], ["updated_at", 2017-01-23 13:43:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+Started GET "/" for ::1 at 2017-01-23 14:43:34 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (3.5ms)
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (37.9ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (45.9ms)
+  Rendered chapters/index.html.erb within layouts/application (59.0ms)
+Completed 200 OK in 212ms (Views: 201.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:49:11 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.4ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (10.1ms)
+  Rendered chapters/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:31 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.9ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (7.0ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (10.9ms)
+  Rendered chapters/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 97ms (Views: 94.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:34 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.4ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.7ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (10.0ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (16.1ms)
+  Rendered chapters/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 72ms (Views: 66.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:35 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.4ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.5ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (10.0ms)
+  Rendered chapters/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:35 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.0ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (9.6ms)
+  Rendered chapters/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:36 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.8ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (9.6ms)
+  Rendered chapters/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 45ms (Views: 42.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:37 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.6ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.8ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (11.2ms)
+  Rendered chapters/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:41 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.6ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (10.1ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (15.5ms)
+  Rendered chapters/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:50:42 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.4ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.6ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (9.2ms)
+  Rendered chapters/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:51:20 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (17.1ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (24.2ms)
+  Rendered chapters/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 72ms (Views: 62.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:51:21 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.4ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (4.9ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (8.2ms)
+  Rendered chapters/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:51:22 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.4ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (9.1ms)
+  Rendered chapters/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:51:22 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.5ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (9.1ms)
+  Rendered chapters/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:51:22 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.8ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (10.0ms)
+  Rendered chapters/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 39ms (Views: 34.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-23 14:51:22 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 2]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.1ms)
+  Rendered collection of chapters/_chapter.html.erb [1 times] (10.2ms)
+  Rendered chapters/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.6ms)
+
+
