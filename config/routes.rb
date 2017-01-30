@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :articles, only: [:show, :new]
+  resources :articles, only: [:show, :new], as: 'article'
 
 	root to: 'chapters#index';
+
 end

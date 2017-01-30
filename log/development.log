@@ -11473,3 +11473,467 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 267ms (Views: 238.0ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/articles/1" for ::1 at 2017-01-30 10:39:56 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 23.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:39:57 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (11.0ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (42.7ms)
+  Rendered chapters/index.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 132ms (Views: 106.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/articles/2" for ::1 at 2017-01-30 10:40:00 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 92ms (Views: 85.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:40:01 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.9ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (12.2ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (46.1ms)
+  Rendered chapters/index.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 112ms (Views: 107.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles/3" for ::1 at 2017-01-30 10:40:02 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 80ms (Views: 76.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:40:03 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (1.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (12.3ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (35.7ms)
+  Rendered chapters/index.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 92ms (Views: 88.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles/3" for ::1 at 2017-01-30 10:42:23 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 68ms (Views: 59.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:43:32 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.8ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.7ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (14.5ms)
+  Rendered chapters/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:51:29 +0100
+  
+ArgumentError (Invalid route name, already in use: 'article' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:8:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.7ms)
+Started GET "/" for ::1 at 2017-01-30 10:51:55 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (22.7ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (33.4ms)
+  Rendered chapters/index.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 77ms (Views: 68.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:51:56 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.7ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.0ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (12.8ms)
+  Rendered chapters/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 50ms (Views: 46.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:51:57 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 94ms (Views: 87.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:52:47 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.7ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.8ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (2.7ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (19.1ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (36.8ms)
+  Rendered chapters/index.html.erb within layouts/application (52.1ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles", :id=>nil} missing required keys: [:id]):
+    1: <tr>
+    2:   <td id="<%= article.id %>"><%= article.title %></td>
+    3:   <td><%= article.content %> <a href="/articles/<%= article.id %>">Voir Plus</a></td>
+    4:   <td><%= link_to 'Voir encore plus', article_path(@article) %></td>
+    5: </tr>
+  
+app/views/articles/_article.html.erb:4:in `_app_views_articles__article_html_erb__555096632058975954_70328617326040'
+app/views/chapters/_sub_chapter.html.erb:4:in `_app_views_chapters__sub_chapter_html_erb__395792350238602863_70328565555040'
+app/views/chapters/_chapter.html.erb:2:in `_app_views_chapters__chapter_html_erb__378957764695253600_70328599876880'
+app/views/chapters/index.html.erb:1:in `_app_views_chapters_index_html_erb__1968033231158527118_70328599957220'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.1ms)
+Started GET "/" for ::1 at 2017-01-30 10:53:18 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (2.9ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (19.6ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (28.3ms)
+  Rendered chapters/index.html.erb within layouts/application (35.9ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles", :id=>nil} missing required keys: [:id]):
+    1: <tr>
+    2:   <td id="<%= article.id %>"><%= article.title %></td>
+    3:   <td><%= article.content %> <a href="/articles/<%= article.id %>">Voir Plus</a></td>
+    4:   <td><%= link_to 'Voir encore plus', article_path(@article) %></td>
+    5: </tr>
+  
+app/views/articles/_article.html.erb:4:in `_app_views_articles__article_html_erb__555096632058975954_70328596805300'
+app/views/chapters/_sub_chapter.html.erb:4:in `_app_views_chapters__sub_chapter_html_erb__395792350238602863_70328597853100'
+app/views/chapters/_chapter.html.erb:2:in `_app_views_chapters__chapter_html_erb__378957764695253600_70328570894620'
+app/views/chapters/index.html.erb:1:in `_app_views_chapters_index_html_erb__1968033231158527118_70328609227380'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.2ms)
+Started GET "/" for ::1 at 2017-01-30 10:53:20 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (2.2ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.9ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (12.6ms)
+  Rendered chapters/index.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"articles", :id=>nil} missing required keys: [:id]):
+    1: <tr>
+    2:   <td id="<%= article.id %>"><%= article.title %></td>
+    3:   <td><%= article.content %> <a href="/articles/<%= article.id %>">Voir Plus</a></td>
+    4:   <td><%= link_to 'Voir encore plus', article_path(@article) %></td>
+    5: </tr>
+  
+app/views/articles/_article.html.erb:4:in `_app_views_articles__article_html_erb__555096632058975954_70328599480760'
+app/views/chapters/_sub_chapter.html.erb:4:in `_app_views_chapters__sub_chapter_html_erb__395792350238602863_70328565586100'
+app/views/chapters/_chapter.html.erb:2:in `_app_views_chapters__chapter_html_erb__378957764695253600_70328565326340'
+app/views/chapters/index.html.erb:1:in `_app_views_chapters_index_html_erb__1968033231158527118_70328610419680'
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Thomas/.rvm/gems/ruby-2.3.3@mydoc/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.4ms)
+Started GET "/" for ::1 at 2017-01-30 10:54:08 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.8ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.5ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (12.7ms)
+  Rendered chapters/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:54:10 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.8ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.2ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (12.1ms)
+  Rendered chapters/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:54:11 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 65ms (Views: 56.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:54:16 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.7ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.5ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (11.7ms)
+  Rendered chapters/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:54:23 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.9ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.4ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (12.7ms)
+  Rendered chapters/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:54:29 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.4ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.1ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.9ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (8.9ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (25.8ms)
+  Rendered chapters/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:54:50 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.7ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.2ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (14.0ms)
+  Rendered chapters/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:55:02 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.7ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.6ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (13.2ms)
+  Rendered chapters/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:55:08 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.8ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.1ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (12.1ms)
+  Rendered chapters/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:55:14 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.7ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.4ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (13.1ms)
+  Rendered chapters/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:55:18 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.8ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (6.8ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (15.7ms)
+  Rendered chapters/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:55:39 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.3ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (1.0ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (27.3ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (35.4ms)
+  Rendered chapters/index.html.erb within layouts/application (43.2ms)
+Completed 200 OK in 68ms (Views: 60.2ms | ActiveRecord: 1.9ms)
+
+
