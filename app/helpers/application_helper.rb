@@ -12,10 +12,10 @@ module ApplicationHelper
 
   def safe_time_ago_in_words(date)
     if (date.nil?)
-      return "Rien"
+      return ""
     else
       return time_ago_in_words(date)
     end
   end
-  
+
 end
