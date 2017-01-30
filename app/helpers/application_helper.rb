@@ -9,4 +9,13 @@ module ApplicationHelper
     # Methode 3 : RESCUE
     # return date.strftime("%d/%m/%Y") rescue "Date inconnue"
   end
+
+  def safe_time_ago_in_words(date)
+    if (date.nil?)
+      return "Rien"
+    else
+      return time_ago_in_words(date)
+    end
+  end
+  
 end

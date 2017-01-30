@@ -54,9 +54,9 @@ presentation = Chapter.create({title: "Présentation"})
 introduction = Chapter.create({title: "Introduction", published_at: Time.zone.now})
 rvm = introduction.children.create({title: "RVM", published_at: Time.zone.now})
 
-rvm.articles.create({content: "Créer le fichier .ruby-version avec le contenu suivant: `ruby-2.3.1`. Ce fichier permet de décrire de quelle version nous avons besoin pour faire fonctionner le projet."})
-rvm.articles.create({content: "Créer le fichier .ruby-version avec le contenu suivant: `mydoc. Ce fichier permet de définir une sorte d'environnement virtuel pour chaque projet."})
-rvm.articles.create({content: "Pour recharger l'environnement il faut faire un `cd` . ou relancer la console."})
+rvm.articles.create({content: "Créer le fichier .ruby-version avec le contenu suivant: `ruby-2.3.1`. Ce fichier permet de décrire de quelle version nous avons besoin pour faire fonctionner le projet.", published_at: Time.zone.now})
+rvm.articles.create({content: "Créer le fichier .ruby-version avec le contenu suivant: `mydoc. Ce fichier permet de définir une sorte d'environnement virtuel pour chaque projet.", published_at: Time.zone.now})
+rvm.articles.create({content: "Pour recharger l'environnement il faut faire un `cd` . ou relancer la console.", published_at: Time.zone.now})
 
 
 introduction.children.create({title: "Initialisation des dépendances", published_at: Time.zone.now})
