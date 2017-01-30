@@ -11247,3 +11247,229 @@ Processing by ChaptersController#index as HTML
 Completed 200 OK in 94ms (Views: 84.8ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/articles/1" for ::1 at 2017-01-30 10:35:14 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 56ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:35:19 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 72ms (Views: 64.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:35:57 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (7.2ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (13.4ms)
+  Rendered chapters/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-01-30 10:36:18 +0100
+Processing by ChaptersController#index as HTML
+  Rendering chapters/index.html.erb within layouts/application
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" IS NULL[0m
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 1]]
+  Rendered collection of chapters/_sub_chapter.html.erb [0 times] (0.0ms)
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."parent_id" = ?[0m  [["parent_id", 2]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 3]]
+  Rendered collection of articles/_article.html.erb [3 times] (0.5ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."chapter_id" = ?[0m  [["chapter_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered collection of chapters/_sub_chapter.html.erb [2 times] (5.6ms)
+  Rendered collection of chapters/_chapter.html.erb [2 times] (13.9ms)
+  Rendered chapters/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:36:48 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:36:55 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:36:56 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:37:03 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:37:25 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:37:26 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:38:00 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:38:06 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:38:18 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-01-30 10:38:48 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20170109142639)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "chapter_id" integer, "lang" varchar, "published_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_articles_on_chapter_id" ON "articles" ("chapter_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170109142639"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateChapters (20170116094340)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "chapters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "published_at" datetime, "parent_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170116094340"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTitleToArticles (20170123134056)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "articles" ADD "title" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170123134056"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-30 09:39:16 UTC], ["updated_at", 2017-01-30 09:39:16 UTC]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_chapter_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Présentation"], ["created_at", 2017-01-30 09:39:18 UTC], ["updated_at", 2017-01-30 09:39:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Introduction"], ["published_at", 2017-01-30 09:39:18 UTC], ["created_at", 2017-01-30 09:39:18 UTC], ["updated_at", 2017-01-30 09:39:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "RVM"], ["published_at", 2017-01-30 09:39:18 UTC], ["parent_id", 2], ["created_at", 2017-01-30 09:39:18 UTC], ["updated_at", 2017-01-30 09:39:18 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "published_at", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Créer le fichier .ruby-version avec le contenu suivant: `ruby-2.3.1`. Ce fichier permet de décrire de quelle version nous avons besoin pour faire fonctionner le projet."], ["chapter_id", 3], ["published_at", 2017-01-30 09:39:18 UTC], ["created_at", 2017-01-30 09:39:18 UTC], ["updated_at", 2017-01-30 09:39:18 UTC], ["title", "Titre 1"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "published_at", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Créer le fichier .ruby-version avec le contenu suivant: `mydoc. Ce fichier permet de définir une sorte d'environnement virtuel pour chaque projet."], ["chapter_id", 3], ["published_at", 2017-01-30 09:39:18 UTC], ["created_at", 2017-01-30 09:39:18 UTC], ["updated_at", 2017-01-30 09:39:18 UTC], ["title", "Titre 2"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("content", "chapter_id", "published_at", "created_at", "updated_at", "title") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Pour recharger l'environnement il faut faire un `cd` . ou relancer la console."], ["chapter_id", 3], ["published_at", 2017-01-30 09:39:18 UTC], ["created_at", 2017-01-30 09:39:18 UTC], ["updated_at", 2017-01-30 09:39:18 UTC], ["title", "Titre 3"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "published_at", "parent_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Initialisation des dépendances"], ["published_at", 2017-01-30 09:39:18 UTC], ["parent_id", 2], ["created_at", 2017-01-30 09:39:18 UTC], ["updated_at", 2017-01-30 09:39:18 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/articles/1" for ::1 at 2017-01-30 10:39:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE ("articles"."published_at" IS NOT NULL) AND "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 267ms (Views: 238.0ms | ActiveRecord: 0.8ms)
+
+
